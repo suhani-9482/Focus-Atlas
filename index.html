@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#121d35">
+  <meta name="description" content="An offline-first personal GRE, IELTS and career study tracker. Data stays on your device.">
+  <title>Focus Atlas · Study & Life Tracker</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div id="appShell" class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="brand-icon">◈</span><div><strong>Focus Atlas</strong><small>YOUR STUDY SPACE</small></div></div>
+    <p class="nav-label">WORKSPACE</p>
+    <nav id="nav" class="nav" aria-label="Main navigation">
+      <button data-page="dashboard" class="nav-item active"><span class="nav-icon">▦</span><span>Overview</span></button>
+      <button data-page="planner" class="nav-item"><span class="nav-icon">▤</span><span>Daily schedules</span></button>
+      <button data-page="log" class="nav-item"><span class="nav-icon">◷</span><span>Timer & activity</span></button>
+      <button data-page="syllabus" class="nav-item"><span class="nav-icon">☑</span><span>GRE syllabus</span></button>
+      <button data-page="weeks" class="nav-item"><span class="nav-icon">▦</span><span>Weekly roadmap</span></button>
+      <button data-page="notes" class="nav-item"><span class="nav-icon">▧</span><span>Daily notes</span></button>
+      <button data-page="stats" class="nav-item"><span class="nav-icon">▥</span><span>Statistics</span></button>
+    </nav>
+    <div class="side-bottom">
+      <div class="deadline-card"><span class="side-eyebrow">YOUR DEADLINE</span><strong>31 Jan 2027</strong><span id="daysLeftSide">GRE + IELTS syllabus</span><div class="mini-progress"><i id="sideProg" style="width:0%"></i></div></div>
+      <button data-page="settings" class="nav-item settings-link"><span class="nav-icon">⚙</span><span>Settings & backup</span></button>
+      <div class="privacy-line">● Local-first · No account required</div>
+    </div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><button class="icon-button mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button><div class="crumb">MY WORKSPACE <span>/</span> <b id="crumbPage">Overview</b></div><div class="top-actions"><span id="saveIndicator" class="saved-indicator">● Saved on this device</span><button id="topQuickAdd" class="btn btn-primary small">+ Log time</button></div></header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+ </div>
+ <div id="modalRoot"></div>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <script src="app.js" defer></script>
+</body>
+</html>
